@@ -61,16 +61,16 @@ body {
 
 .pic2:hover {
 	cursor: pointer;
-	transform: rotate(360deg)scale(1.2);
-	-ms-transform: rotate(360deg)scale(1.2);
-	-webkit-transform: rotate(360deg)scale(1.2);
+	transform: rotate(360deg)scale(1.5);
+	-ms-transform: rotate(360deg)scale(1.5);
+	-webkit-transform: rotate(360deg)scale(1.5);
 }
 
 
 .pic3:hover {
-	transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	-webkit-transform: scale(1.2);
+	transform: scale(1.4);
+	-ms-transform: scale(1.4);
+	-webkit-transform: scale(1.4);
 }
 
 .pic4:hover {
@@ -202,7 +202,7 @@ p {
 	text-transform: uppercase;
 	line-height: 60px;
 	outline: 0;
-	color: rgb(255, 255, 255);
+	color: rgba(255, 255, 255, 0);
 }
 
 .content {
@@ -212,42 +212,68 @@ p {
 
 .container2 {
 	width: 100%;
-	background-color: #ddd;
-}
-
-.container {
-	padding: 10px 40px;
-	position: relative;
-	background-color: inherit;
+	background-color: rgba(221, 221, 221, 0);
 	width: 50%;
+	margin: 0 auto;
 }
 
-.skills {
-	text-align: right;
-	font-size: 14pt;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: rgb(0, 0, 0);
+@keyframes load {
+	from {
+		width: 0%
+	}
 }
 
-.html {
-	width: 50%;
-	background-color: #808080;
+@-webkit-keyframes load {
+	from {
+		width: 0%
+	}
 }
 
-.css {
-	width: 50%;
-	background-color: #808080;
+@-moz-keyframes load {
+	from {
+		width: 0%
+	}
 }
 
-.js {
-	width: 30%;
-	background-color: #808080;
+@-o-keyframes load {
+	from {
+		width: 0%
+	}
 }
 
-.php {
-	width: 10%;
-	background-color: #808080;
+.bar {
+	background-color: #EEE;
+	padding: 2px;
+	border-radius: 15px;
+	margin-bottom: 5px;
+	font-size: 15px;
+	color: #FFF;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bar::before {
+	content: attr(data-skill);
+	background-color: #6b6b6b;
+	display: inline-block;
+	padding: 5px 0 5px 10px;
+	border-radius: inherit;
+	animation: load 3s 0s;
+	-webkit-animation: load 3s 0s;
+	-moz-animation: load 3s 0s;
+	-o-animation: load 3s 0s;
+}
+
+.bar.a::before {
+	width: calc(20% - 10px);
+}
+
+.bar.b::before {
+	width: calc(40% - 10px);
+}
+
+.bar.c::before {
+	width: calc(55% - 10px);
 }
 
 .accordion {
